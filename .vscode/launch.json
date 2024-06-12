@@ -1,0 +1,35 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        // For these launch configurations to work, you need to setup a GODOT
+        // environment variable. On mac or linux, this can be done by adding
+        // the following to your .zshrc, .bashrc, or .bash_profile file:
+        // export GODOT="/Applications/Godot.app/Contents/MacOS/Godot"
+        {
+            "name": "🕹调试游戏",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "/Applications/Godot_mono.app/Contents/MacOS/Godot",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "console": "integratedTerminal"
+        },
+        // Debug the scene that matches the name of the currently open *.cs file
+        // (if there's a scene with the same name in the same directory).
+        {
+            "name": "🎭调试当前场景",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "/Applications/Godot_mono.app/Contents/MacOS/Godot",
+            "args": [
+                "${fileDirname}/${fileBasenameNoExtension}.tscn"
+            ],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "console": "integratedTerminal"
+        }
+    ]
+}
